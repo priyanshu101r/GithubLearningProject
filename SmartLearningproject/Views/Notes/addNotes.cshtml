@@ -1,0 +1,73 @@
+﻿@model DataAccessLayer.DataModel.AddNotes
+
+@{
+    ViewBag.Title = "addNotes";
+}
+
+<style>
+    .center_div {
+        margin: 0 auto;
+        width: 80% /* value of your choice which suits your alignment */;
+    }
+    .notebutn {
+      
+       width:200px;
+        text-align: center;
+    }
+
+</style>
+@using (Html.BeginForm("addNotes", "Notes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+            <div class="col-md-8 center_div">
+                <div class="form-horizontal">
+                    <h4>AddNotes</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.subjectname, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.subjectname, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.subjectname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.shortsubjname, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.shortsubjname, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.shortsubjname, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.refPrograme, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.refPrograme, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.refPrograme, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.filepath, htmlAttributes: new { @class = "control-label col-md-2" })
+
+
+                        <div class="col-md-10">
+                            <input type="file" name="subfile">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <input type="submit" value="Create" class="btn notebutn btn-default" />
+                    </div>
+
+                    <h4 style="color:@ViewBag.color"> @ViewBag.message </h4>
+
+                </div>
+
+    </div>
+}
+
+

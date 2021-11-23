@@ -1,0 +1,123 @@
+﻿@model  IEnumerable<DataAccessLayer.DataModel.AddNotes>
+
+@{
+    ViewBag.Title = "notes";
+}
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<style>
+
+    /*.containe {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        background-color: rgb(217, 220, 223);*/
+    /*margin: 10rem;*/
+    /*box-shadow: rgba(146, 241, 57, 0.35) 0px 5px 15px;
+        border-radius: 0.4rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60vh;
+        height: 10vw;
+        margin-top: 4rem;
+        background-color: rgb(255, 252, 247);
+        margin: 4rem auto;
+        border-radius: 0.4rem;
+        box-shadow: rgba(17, 17, 17, 0.952) 0px 5px 15px;
+    }
+
+    .btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.4rem;
+        margin: 1rem;
+    }
+
+    .btn {
+        margin-right: 0.4rem;
+    }*/
+    .card-custom {
+        border: 1px solid #bc4639;
+        border-radius: 20px;
+        padding: 10px 10px 30px 10px;
+    }
+
+        .card-custom .custom-btn {
+            color: #fff;
+            background: #bc4639;
+            border-radius: 20px;
+            padding: 10px 30px;
+        }
+
+            .card-custom .custom-btn:hover {
+                text-decoration: none;
+            }
+
+    .icon {
+        margin: 30px 0;
+    }
+</style>
+
+
+
+@*<body style="background-color: #2B3234">*@
+
+<div class="container">
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-4">
+                <div class="card-custom text-center">
+                    <div class="icon">
+                        <label>@item.subjectname (@item.shortsubjname) </label>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-3x fa-fw fa-file-pdf text-primary"></i>
+                    </div>
+                    <div class="btns">
+                        @Html.ActionLink("Download", "DownloadFile", new { fileName = item.filepath }, new { @class = "custom-btn" })
+                        <button type="button" class="custom-btn" data-toggle="modal" data-target="#exampleModal">
+                            View
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">@item.subjectname</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <embed src="~/Notes/@item.filepath" style="width:550px;" />
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn custom-btn"  data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    
+
+
+
+
+</div>
+

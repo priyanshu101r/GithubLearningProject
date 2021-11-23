@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - SmartLearning</title>
+    @Styles.Render("~/Content/css")
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/newsite.css" rel="stylesheet" />
+    @*@Styles.Render("~/Content/newsite")*@
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="" alt="Logo Image">
+                </div>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-links">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Tutorial", "tutorial", "Tutorial")</li>
+                    <li>@Html.ActionLink("Index", "Index", "Account")</li>
+                    <li>@Html.ActionLink("Quiztest", "Quiztest", "Quiz")</li>
+                    <li>@Html.ActionLink("Notes", "notes", "Notes")</li>
+                    <li><button class="login-button" href="/Account/Index">Login</button></li>
+                    <li><button class="join-button" href="#">Join</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section class="inner-content">
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+
+        </div>
+    </section>
+    <script src="~/Scripts/layout.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/layout.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

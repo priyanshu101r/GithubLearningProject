@@ -1,0 +1,43 @@
+﻿@model  DataAccessLayer.DataModel.Tutorialamodel
+
+
+<table style="width:100%;background-color:orange;color:white;">
+    <tr>
+        @foreach (var item in Model.subjects)
+        {
+            <th><a href="#" onclick="loadtopic(1)">@item.subname</a></th>
+
+            @*<th>MVC</th>
+                <th>Javascript</th>
+                <th>Angular</th>
+                <th>.NETcore</th>
+                <th>API</th>*@
+        }
+
+    </tr>
+</table>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+    function loadtopic(id) {
+        $.ajax({
+            url: '/Tutorial/tutorialtopic/1',
+            contentType: 'application/html; charset=utf-8',
+            type: 'GET',
+            dataType: 'html',
+
+            success: function (response) {
+                debugger
+                $('#tutorialside').html(response);
+            },
+            error: function (error) {
+                $(this).remove();
+              
+            }
+        })
+    }
+
+
+
+</script>
+

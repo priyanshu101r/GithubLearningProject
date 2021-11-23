@@ -1,0 +1,107 @@
+﻿@model  DataAccessLayer.DataModel.Tutorialamodel
+
+<style>
+    @@import url("https://bootswatch.com/flatly/bootstrap.min.css");
+
+    body {
+        padding-top: 50px;
+    }
+
+
+    @@media screen and (max-width: 768px) {
+        .row-offcanvas {
+            position: relative;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+            background: #ecf0f1;
+        }
+
+        .row-offcanvas-left
+        .sidebar-offcanvas {
+            left: -40%;
+        }
+
+        .row-offcanvas-left.active {
+            left: 40%;
+        }
+
+
+        .sidebar-offcanvas {
+            position: absolute;
+            top: 0;
+            width: 40%;
+            margin-left: 12px;
+        }
+    }
+
+    #sidebar {
+        padding: 15px;
+        margin-top: 10px;
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+        background: gray;
+        color: BLACK;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-12 col-sm-12 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="sidebar-nav">
+                <ul class="nav">
+                    @foreach (var item in Model.topics)
+                    {
+                        <li class="active"><a href="#" onclick="loadcontent(1)">@item.topicName</a></li>
+
+                    }
+
+                    @*<li class="active"><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>*@
+                </ul>
+            </div>
+            <!--/.well -->
+        </div>
+
+    </div>
+
+
+    <hr>
+
+</div>
+
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+    function loadcontent(id) {
+        $.ajax({
+            url: '/Tutorial/content/1',
+            contentType: 'application/html; charset=utf-8',
+            type: 'GET',
+            dataType: 'html',
+
+            success: function (response) {
+                
+                $('#dvUserdetails').html(response);
+            },
+            error: function (error) {
+                $(this).remove();
+              
+            }
+        })
+    }
+
+
+
+</script>

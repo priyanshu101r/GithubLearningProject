@@ -1,0 +1,11 @@
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.dll
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\BussinessLogicLayer.pdb
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.csproj.CopyComplete
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.dll
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\obj\Debug\BussinessLogicLayer.pdb
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\Dapper.dll
+C:\Users\Admin\source\Repos\SmartLearningproject\BussinessLogicLayer\bin\Debug\Dapper.xml
